@@ -1,0 +1,19 @@
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/api/auth/[...nextauth]/route": "app/api/auth/[...nextauth]/route.js",
+  "/api/attendance/route": "app/api/attendance/route.js",
+  "/api/departments/[id]/route": "app/api/departments/[id]/route.js",
+  "/api/departments/route": "app/api/departments/route.js",
+  "/api/employees/[id]/route": "app/api/employees/[id]/route.js",
+  "/api/employees/route": "app/api/employees/route.js",
+  "/api/leaves/route": "app/api/leaves/route.js",
+  "/attendance/page": "app/attendance/page.js",
+  "/api/dashboard/stats/route": "app/api/dashboard/stats/route.js",
+  "/departments/page": "app/departments/page.js",
+  "/employees/[id]/page": "app/employees/[id]/page.js",
+  "/employees/page": "app/employees/page.js",
+  "/leaves/page": "app/leaves/page.js",
+  "/page": "app/page.js",
+  "/login/page": "app/login/page.js",
+  "/dashboard/page": "app/dashboard/page.js"
+}
