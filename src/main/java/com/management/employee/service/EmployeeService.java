@@ -31,7 +31,8 @@ public interface EmployeeService {
      * @return List of EmployeeDto objects
      */
     List<EmployeeDto> getAllEmployees();
-
+    
+    List<EmployeeDto> getEmployeesByDepartment(String department);
     /**
      * Update an existing employee record.
      *

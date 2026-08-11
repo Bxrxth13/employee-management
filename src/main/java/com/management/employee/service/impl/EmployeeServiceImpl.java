@@ -59,6 +59,16 @@ public class EmployeeServiceImpl implements EmployeeService {
                 .map(this::mapToDto)
                 .collect(Collectors.toList());
     }
+    
+    @Override
+@Transactional(readOnly = true)
+public List<EmployeeDto> getEmployeesByDepartment(String department) {
+    List<Employee> employees = employeeRepository.findByDepartmentIgnoreCase(department);
+
+    return employees.stream()
+            .map(this::mapToDto)
+            .collect(Collectors.toList());
+}
 
     @Override
     @Transactional
