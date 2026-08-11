@@ -6,6 +6,7 @@ pipeline {
     DOCKER_IMAGE = 'employee-management:latest'
     CONTAINER_NAME = 'employee-app'
     SERVER_PORT = '8081'
+    PATH = "/opt/maven/bin:/usr/local/bin:/usr/bin:/bin:${env.PATH}"
 }
 
     options {
