@@ -21,3 +21,4 @@ node_modules/
 
 # System temp files
 *.tmp
+.DS_Store
