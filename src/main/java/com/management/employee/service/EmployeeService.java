@@ -31,7 +31,8 @@ public interface EmployeeService {
      * @return List of EmployeeDto objects
      */
     List<EmployeeDto> getAllEmployees();
-
+    
+    List<EmployeeDto> getEmployeesByDepartment(String department);
     /**
      * Update an existing employee record.
      *
@@ -45,6 +46,7 @@ public interface EmployeeService {
      * Delete an employee record by ID.
      *
      * @param employeeId Unique employee ID
+     * @return Deleted EmployeeDto
      */
-    void deleteEmployee(Long employeeId);
+    EmployeeDto deleteEmployee(Long employeeId);
 }

@@ -4,6 +4,7 @@ import com.management.employee.entity.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -27,6 +28,7 @@ public interface EmployeeRepository extends JpaRepository<Employee, Long> {
      * @return Optional containing Employee if found
      */
     Optional<Employee> findByEmail(String email);
+    List<Employee> findByDepartmentIgnoreCase(String department);
 
     /**
      * Check if an employee with the given email exists excluding a specific employee ID (used during updates).
