@@ -12,7 +12,7 @@ pipeline {
         APP_NAME = 'employee-management'
         DOCKER_IMAGE = 'employee-management:latest'
         CONTAINER_NAME = 'employee-app'
-        SERVER_PORT = '8080'
+        SERVER_PORT = '8081'
     }
 
     options {
