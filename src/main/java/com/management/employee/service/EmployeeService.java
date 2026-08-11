@@ -45,6 +45,7 @@ public interface EmployeeService {
      * Delete an employee record by ID.
      *
      * @param employeeId Unique employee ID
+     * @return Deleted EmployeeDto
      */
-    void deleteEmployee(Long employeeId);
+    EmployeeDto deleteEmployee(Long employeeId);
 }
