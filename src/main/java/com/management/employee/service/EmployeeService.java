@@ -41,6 +41,7 @@ public interface EmployeeService {
      * @return Updated EmployeeDto
      */
     EmployeeDto updateEmployee(Long employeeId, EmployeeDto employeeDto);
+    void deleteEmployee(Long employeeId);
 
     /**
      * Delete an employee record by ID.
@@ -48,5 +49,4 @@ public interface EmployeeService {
      * @param employeeId Unique employee ID
      * @return Deleted EmployeeDto
      */
-    EmployeeDto deleteEmployee(Long employeeId);
 }
