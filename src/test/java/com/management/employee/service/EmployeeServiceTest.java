@@ -107,6 +107,39 @@ class EmployeeServiceTest {
     }
 
     @Test
+    @DisplayName("Get Employee By Email - Success")
+    void givenEmail_whenGetEmployeeByEmail_thenReturnEmployeeDto() {
+        given(employeeRepository.findByEmail("john.doe@company.com")).willReturn(Optional.of(employee));
+
+        EmployeeDto foundDto = employeeService.getEmployeeByEmail("john.doe@company.com");
+
+        assertThat(foundDto).isNotNull();
+        assertThat(foundDto.getEmail()).isEqualTo("john.doe@company.com");
+    }
+
+    @Test
+    @DisplayName("Get Employees By Department - Success")
+    void givenDepartment_whenGetEmployeesByDepartment_thenReturnEmployeeDtoList() {
+        Employee secondEmployee = Employee.builder()
+                .employeeId(2L)
+                .firstName("Jane")
+                .lastName("Smith")
+                .email("jane.smith@company.com")
+                .department("Engineering")
+                .designation("HR Manager")
+                .salary(85000.00)
+                .joiningDate(LocalDate.of(2023, 5, 10))
+                .build();
+
+        given(employeeRepository.findByDepartment("Engineering")).willReturn(List.of(employee, secondEmployee));
+
+        List<EmployeeDto> employeeList = employeeService.getEmployeesByDepartment("Engineering");
+
+        assertThat(employeeList).hasSize(2);
+        assertThat(employeeList).extracting(EmployeeDto::getDepartment).containsOnly("Engineering");
+    }
+
+    @Test
     @DisplayName("Get All Employees - Success")
     void givenEmployeeList_whenGetAllEmployees_thenReturnEmployeeDtoList() {
         Employee secondEmployee = Employee.builder()

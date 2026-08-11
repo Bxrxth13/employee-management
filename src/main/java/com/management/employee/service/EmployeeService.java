@@ -26,11 +26,27 @@ public interface EmployeeService {
     EmployeeDto getEmployeeById(Long employeeId);
 
     /**
+     * Retrieve an employee by email.
+     *
+     * @param email Email address of the employee
+     * @return EmployeeDto
+     */
+    EmployeeDto getEmployeeByEmail(String email);
+
+    /**
      * Retrieve all employees.
      *
      * @return List of EmployeeDto objects
      */
     List<EmployeeDto> getAllEmployees();
+
+    /**
+     * Retrieve employees by department.
+     *
+     * @param department Department name
+     * @return List of EmployeeDto objects
+     */
+    List<EmployeeDto> getEmployeesByDepartment(String department);
 
     /**
      * Update an existing employee record.
