@@ -8,13 +8,6 @@ pipeline {
     SERVER_PORT = '8081'
 }
 
-    environment {
-        APP_NAME = 'employee-management'
-        DOCKER_IMAGE = 'employee-management:latest'
-        CONTAINER_NAME = 'employee-app'
-        SERVER_PORT = '8081'
-    }
-
     options {
         buildDiscarder(logRotator(numToKeepStr: '10'))
         disableConcurrentBuilds()
