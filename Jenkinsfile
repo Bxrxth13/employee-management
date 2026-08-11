@@ -1,12 +1,12 @@
 pipeline {
     agent any
 
-    tools {
-        // Maven installation name configured in Jenkins Global Tool Configuration
-        maven 'Maven 3.9'
-        // JDK installation name configured in Jenkins Global Tool Configuration
-        jdk 'JDK 17'
-    }
+    environment {
+    APP_NAME = 'employee-management'
+    DOCKER_IMAGE = 'employee-management:latest'
+    CONTAINER_NAME = 'employee-app'
+    SERVER_PORT = '8081'
+}
 
     environment {
         APP_NAME = 'employee-management'
