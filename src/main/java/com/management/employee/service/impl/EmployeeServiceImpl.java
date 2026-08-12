@@ -71,6 +71,23 @@ public List<EmployeeDto> getEmployeesByDepartment(String department) {
 }
 
     @Override
+    @Transactional(readOnly = true)
+    public EmployeeDto getEmployeeByEmail(String email) {
+        Employee employee = employeeRepository.findByEmail(email)
+                .orElseThrow(() -> new EmployeeNotFoundException("Employee not found with email: " + email));
+        return mapToDto(employee);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public List<EmployeeDto> getEmployeesByDepartment(String department) {
+        List<Employee> employees = employeeRepository.findByDepartment(department);
+        return employees.stream()
+                .map(this::mapToDto)
+                .collect(Collectors.toList());
+    }
+
+    @Override
     @Transactional
     public EmployeeDto updateEmployee(Long employeeId, EmployeeDto employeeDto) {
         Employee existingEmployee = employeeRepository.findById(employeeId)

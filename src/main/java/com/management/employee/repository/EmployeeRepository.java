@@ -31,6 +31,14 @@ public interface EmployeeRepository extends JpaRepository<Employee, Long> {
     List<Employee> findByDepartmentIgnoreCase(String department);
 
     /**
+     * Find employees by department.
+     *
+     * @param department Department to search
+     * @return List of employees in that department
+     */
+    List<Employee> findByDepartment(String department);
+
+    /**
      * Check if an employee with the given email exists excluding a specific employee ID (used during updates).
      *
      * @param email Email to search
