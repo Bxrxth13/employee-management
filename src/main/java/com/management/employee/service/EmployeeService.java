@@ -56,7 +56,7 @@ public interface EmployeeService {
      * @return Updated EmployeeDto
      */
     EmployeeDto updateEmployee(Long employeeId, EmployeeDto employeeDto);
-
+String name = "Barath";
     /**
      * Delete an employee record by ID.
      *
