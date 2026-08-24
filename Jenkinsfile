@@ -7,7 +7,9 @@ pipeline {
     }
 
     environment {
-        DOCKER_IMAGE = 'jana06/employee-management'
+    DOCKER_IMAGE = 'jana06/employee-management'
+    DOCKER_HOME = 'C:\\Users\\janardhan\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin'
+    PATH = "${DOCKER_HOME};${env.PATH}"
     }
 
     stages {
